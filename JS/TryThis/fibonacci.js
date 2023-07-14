@@ -52,7 +52,6 @@ console.timeEnd("q");
 
 //memoized 함수 => fn함수 memoized1에 넣기
 function memoized1() {
-  //클로저: 은닉
   function fn(n) {
     runCNT += 1;
     if (n < 2) return n;
