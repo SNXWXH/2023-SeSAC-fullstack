@@ -6,26 +6,27 @@
 
 const keyPair = (arr, n) => {
   let pair = [];
-  console.log("🚀 ~ file: keypair.js:9 ~ keyPair ~ pair:", pair);
   arr.map((v) => {
     pair.push(n - v);
   });
-  return arr.reduce((result, v, i) => {
-    if (pair.includes(v)) result.push(i);
+  return arr.reduce((acc, v, i) => {
+    if (pair.includes(v)) acc.push(i);
     if (i === arr.length - 1) {
-      if (result.length % 2 != 0) {
-        let dup = arr.indexOf(n / 2);
-        result.splice(result.indexOf(dup), 1);
-      }
+      if (acc.length % 2 != 0) acc.splice(acc.indexOf(arr.indexOf(n / 2)), 1);
     }
-    // if (pair.includes(v)) if (v * 2 != n) result.push(i);
+    // if (pair.includes(v)) if (v * 2 != n) acc.push(i);
 
-    return result;
+    return acc;
   }, []);
 };
 
-console.log(keyPair([1, 4, 45, 6, 10, 8], 16)); //[3,4]
-console.log(keyPair([1, 2, 4, 3, 6], 10)); //[2,4]
-console.log(keyPair([1, 2, 3, 4, 5], 9)); //[3,4]
-console.log(keyPair([1, 2, 4, 4, 9], 8)); //[3,4]
-console.log(keyPair([1, 4, 45, 9, 8, 8], 16)); // [4,5]
+const a = keyPair([1, 4, 45, 6, 10, 8], 16); //[3,4]
+console.log("🚀  a:", a);
+const b = keyPair([1, 2, 4, 3, 6], 10); //[2,4]
+console.log("🚀  b:", b);
+const c = keyPair([1, 2, 3, 4, 5], 9); //[3,4]
+console.log("🚀  c:", c);
+const d = keyPair([1, 2, 4, 4, 9], 8); //[3,4]
+console.log("🚀  d:", d);
+const e = keyPair([1, 4, 45, 9, 8, 8], 16); // [4,5]
+console.log("🚀  e:", e);
