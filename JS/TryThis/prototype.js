@@ -1,5 +1,5 @@
-/**
- * *mapBy(), findBy(), filterBy(), firstObject, lastObject 만들기
+/*
+  TODO: mapBy(), findBy(), filterBy(), firstObject, lastObject 만들기
  */
 
 const hong = { id: 1, name: "Hong" };
@@ -54,9 +54,9 @@ const d = users.mapBy("id"); // [1, 2, 3]
 console.log("🚀  d:", d);
 const e = users.mapBy("name"); // ['Hong', 'Kim', 'Lee']
 console.log("🚀  e:", e);
-const f = users.filterBy("id", 2); // [{ id: 2, name: 'Kim' }]
-console.log("🚀  f:", f);
-const g = users.findBy("name", "Kim"); // { id: 2, name: 'Kim' }
-console.log("🚀  g:", g);
-const h = users.objectAt(1); // { id: 2, name: 'Kim' }
-console.log("🚀  h:", h);
+const filterBy = users.filterBy("id", 2); // [{ id: 2, name: 'Kim' }]
+console.log("🚀  filterBy:", filterBy);
+const findBy = users.findBy("name", "Kim"); // { id: 2, name: 'Kim' }
+console.log("🚀  findBy:", findBy);
+const objectAt = users.objectAt(1); // { id: 2, name: 'Kim' }
+console.log("🚀  objectAt:", objectAt);

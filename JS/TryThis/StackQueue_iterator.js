@@ -32,6 +32,7 @@ class collaboration {
     console.log(this.#arr);
   }
 }
+
 class Stack extends collaboration {
   push(item) {
     super.arr.push(item);
@@ -52,6 +53,20 @@ class Stack extends collaboration {
   remove() {
     super.arr.pop();
   }
+
+  [Symbol.iterator]() {
+    let idx = this.arr.length;
+    return {
+      next: () => {
+        idx -= 1;
+        if (idx < 0) return { done: true };
+        return { value: this.arr[idx], done: false };
+      },
+    };
+  }
+  iterator() {
+    return this[Symbol.iterator]();
+  }
 }
 
 const stack = new Stack();
@@ -60,6 +75,8 @@ stack.push(5);
 stack.push(7);
 stack.push(2);
 stack.push(8);
+
+console.log("iterator>>  ", [...stack]);
 
 stack.print();
 const a = stack.toArray();
@@ -110,6 +127,20 @@ class Queue extends collaboration {
   remove() {
     super.arr.shift();
   }
+
+  [Symbol.iterator]() {
+    let idx = -1;
+    return {
+      next: () => {
+        idx += 1;
+        if (idx >= 0) return { done: true };
+        return { value: this.arr[idx], done: false };
+      },
+    };
+  }
+  iterator() {
+    return this[Symbol.iterator]();
+  }
 }
 
 const queue = new Queue();
@@ -119,6 +150,8 @@ queue.enqueue(5);
 queue.enqueue(7);
 queue.enqueue(2);
 queue.enqueue(8);
+
+console.log("iterator>>  ", [...queue]);
 
 queue.print();
 const e = queue.toArray();
