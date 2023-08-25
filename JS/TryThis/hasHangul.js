@@ -9,7 +9,7 @@ const b = hasHangul("ㄱㄴㄷ"); //true
 console.log("🚀  b:", b);
 const c = hasHangul("ㅜㅜㅠㅜㅠ"); //true
 console.log("🚀  c:", c);
-const d = hasHangul("케익뷐"); //true
+const d = hasHangul("장태민"); //true
 console.log("🚀  d:", d);
 const e = hasHangul("12345"); //false
 console.log("🚀  e:", e);
