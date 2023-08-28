@@ -18,7 +18,10 @@ const keyPair = (arr, n) => {
   }, []);
 };
 
-const a = keyPair([1, 4, 45, 6, 10, 8], 16); //[3,4]
+/*
+!반례 ([8,8,8,8,8,8],16)
+*/
+const a = keyPair([1, 4, 45, 6, 10, 8], 16); //[3,4,5]
 console.log("🚀  a:", a);
 const b = keyPair([1, 2, 4, 3, 6], 10); //[2,4]
 console.log("🚀  b:", b);
@@ -26,5 +29,5 @@ const c = keyPair([1, 2, 3, 4, 5], 9); //[3,4]
 console.log("🚀  c:", c);
 const d = keyPair([1, 2, 4, 4, 9], 8); //[3,4]
 console.log("🚀  d:", d);
-const e = keyPair([1, 4, 45, 9, 8, 8], 16); // [4,5]
+const e = keyPair([1, 4, 45, 9, 8, 12, 8], 16); // [4,5]
 console.log("🚀  e:", e);
