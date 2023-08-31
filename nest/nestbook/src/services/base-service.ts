@@ -4,7 +4,9 @@ import { ServiceA } from './a.service';
 
 // @Injectable()
 export class BaseService {
-  @Inject(ServiceA) private readonly serviceA: ServiceA;
+  //한줄에 적는게 아닌 엔터 쳐서 쓰는게 관례
+  @Inject(ServiceA)
+  private readonly serviceA: ServiceA;
   // constructor(private readonly serviceA: ServiceA) {}
 
   getHello(): string {
