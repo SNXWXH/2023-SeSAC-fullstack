@@ -2,6 +2,10 @@
 # @host= http://localhost:3000
 
 # Get http://localhost:3000
+### serviceB test
+Get {{localHost}}/serviceB
+
+###
 Get {{localHost}}
 
 ###
