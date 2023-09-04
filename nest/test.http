@@ -2,6 +2,9 @@
 # @host= http://localhost:3000
 
 # Get http://localhost:3000
+## api test
+# Get{{.example.comapi}}
+
 ### serviceB test
 Get {{localHost}}/serviceB
 
