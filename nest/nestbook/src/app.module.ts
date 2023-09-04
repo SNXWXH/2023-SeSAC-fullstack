@@ -6,10 +6,21 @@ import { ServiceA } from './services/a.service';
 import { ServiceB } from './services/b.service';
 
 import { ApiController } from './api/api.controller';
-import { UsersModule } from './users/users.module';
+// import { UsersModule } from './users/users.module';
+import { EmailService } from './email/email.service';
+import { UsersController } from './users/users.controller';
+import { UsersService } from './users/users.service';
 @Module({
-  controllers: [ApiController, AppController],
-  providers: [ApiController, AppService, BaseService, ServiceA, ServiceB],
-  imports: [UsersModule],
+  controllers: [ApiController, AppController, UsersController],
+  providers: [
+    ApiController,
+    AppService,
+    BaseService,
+    ServiceA,
+    ServiceB,
+    EmailService,
+    UsersService,
+  ],
+  imports: [],
 })
 export class AppModule {}
