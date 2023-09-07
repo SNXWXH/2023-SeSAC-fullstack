@@ -63,6 +63,12 @@ import { CreateUserDto } from './dto/create-user.dto';
 // import { UserInfo } from './UserInfo';
 import { UsersService } from './users.service';
 
+/*
+실제 프로젝트에서는 이렇게 사용됨
+api부분은 namespace임 (auth가 올 수도 있음)
+원래는 :namespace로 작성해야 함
+@Controller('/api/:version/users')
+*/
 @Controller('users')
 export class UsersController {
   constructor(private usersService: UsersService) {}
