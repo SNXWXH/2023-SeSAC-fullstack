@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <h1>hi</h1>
+    <div>
+      <p><span id="spanX">x</span></p>
+      <!-- <p><span id="spanA">11111</span></p>
+      <p><span id="spanB">22222</span></p> -->
+    </div>
+    <script>
+      // const p = document.getElementById("spanX");
+      // const textnode = document.createTextNode("x");
+
+      // console.log(p.offsetWidth);
+      // console.log("🚀  p:", p);
+      // const $div = document.getElementById("spanA");
+      // console.log("DDDD", div);
+
+      const $spanX = document.getElementById("spanX");
+      $spanX.appendChild(document.createTextNode("X"));
+      $spanX.textContent = "XXXXX";
+      const width = $spanX.offsetWidth;
+      console.log("222", width, 500 / (width / 5));
+
+      // while ($spanX.offsetWidth < 500) {
+      //   $spanX.textContent += "X";
+      // }
+      $spanX.textContent += "X".repeat(500 / (width / 5)); // while문보다는 줄어들음
+      function f2() {
+        const $tmp = $spanX.cloneNode();
+        while ($spanX.offsetWidth < 500) {
+          $spanX.textContent += "X"; //ctrl + option + L = log찍기
+        }
+        console.log("$tmp.width>>", $tmp.offsetWidth);
+        $spanX.parentNode.replaceChild($tmp, $spanX);
+      }
+      f2();
+
+      console.log("***", $spanX.offsetWidth);
+    </script>
+  </body>
+</html>
